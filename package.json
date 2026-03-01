@@ -1,0 +1,59 @@
+{
+  "name": "portfolio-forge",
+  "version": "1.0.0",
+  "description": "Une plateforme web complète qui permet à chaque professionnel de créer, gérer et partager son portfolio digital moderne.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "start": "cd server && npm start",
+    "preview": "cd client && npm run preview",
+    "test": "npm run test:client && npm run test:server",
+    "test:client": "cd client && npm test",
+    "test:server": "cd server && npm test",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "clean": "rm -rf client/dist server/dist client/node_modules server/node_modules",
+    "deploy:vercel": "cd client && npm run build && vercel --prod",
+    "deploy:railway": "cd server && railway deploy",
+    "deploy:all": "npm run deploy:vercel && npm run deploy:railway",
+    "setup": "chmod +x deploy.sh && ./deploy.sh setup",
+    "postinstall": "echo '🚀 PortfolioForge - Installation completed! Run npm run dev to start development servers.'"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "nodejs",
+    "express",
+    "tailwindcss",
+    "prisma",
+    "jwt",
+    "vite",
+    "fullstack"
+  ],
+  "author": "Emmanuel Nduwayo Bagi <emmanuel.bagi.n@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emmanuelbagi/portfolio-forge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emmanuelbagi/portfolio-forge/issues"
+  },
+  "homepage": "https://portfolio-forge.vercel.app",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.13.6"
+  }
+}

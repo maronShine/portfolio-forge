@@ -1,0 +1,12 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "cd client && npm run build && cd .. && npm install",
+    "startCommand": "npm start"
+  },
+  "deploy": {
+    "startCommand": "npm start",
+    "restartPolicyType": "ON_FAILURE",
+    "healthcheckPath": "/api/health"
+  }
+}
