@@ -35,9 +35,8 @@ const Navbar = () => {
       top: 0,
       left: 0,
       right: 0,
-      backgroundColor: scrolled ? 'rgba(26, 35, 50, 0.98)' : 'rgba(26, 35, 50, 0.95)',
-      backdropFilter: 'blur(10px)',
-      borderBottom: '1px solid #334155',
+      backgroundColor: '#FFFFFF',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.08)',
       zIndex: 1000,
       transition: 'all 0.3s ease'
     }}>
@@ -55,10 +54,10 @@ const Navbar = () => {
           <Link 
             to="/" 
             style={{
-              fontFamily: "Syne, sans-serif",
+              fontFamily: "Georgia, serif",
               fontSize: '1.5rem',
-              fontWeight: 800,
-              color: '#FFFFFF',
+              fontWeight: 600,
+              color: '#1A1A2E',
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -84,8 +83,9 @@ const Navbar = () => {
                   key={item.href}
                   to={item.href}
                   style={{
-                    color: location.pathname === item.href ? '#00C9A7' : '#94A3B8',
-                    fontWeight: 500,
+                    color: location.pathname === item.href ? '#1A4D8F' : '#64748B',
+                    fontFamily: "Georgia, serif",
+                    fontWeight: 600,
                     padding: '0.5rem 1rem',
                     borderRadius: '0.5rem',
                     textDecoration: 'none',

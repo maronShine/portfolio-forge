@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#F0F4F8',
+      backgroundColor: '#F5F7FA',
       color: '#1A1A2E'
     }}>
       {/* HERO SECTION */}
@@ -49,7 +49,7 @@ const Home = () => {
         justifyContent: 'center',
         padding: '60px 16px',
         position: 'relative',
-        background: 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 50%, #F0F4F8 100%)',
+        background: 'linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 50%, #F5F7FA 100%)',
         overflowX: 'hidden',
         maxWidth: '100vw'
       }}>
@@ -71,8 +71,7 @@ const Home = () => {
               height: 150, 
               borderRadius: "50%", 
               objectFit: "cover", 
-              border: "3px solid #1A4D8F",
-              boxShadow: '0 10px 25px rgba(26, 77, 143, 0.2)'
+              border: "3px solid #1A4D8F"
             }}
           />
           <div>
@@ -244,7 +243,7 @@ const Home = () => {
       {/* POSITIONNEMENT SECTION */}
       <section id="positioning" style={{
         padding: '4rem 0',
-        backgroundColor: '#1A2332'
+        backgroundColor: '#F5F7FA'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -256,7 +255,7 @@ const Home = () => {
             fontFamily: "Syne, sans-serif",
             textAlign: 'center',
             marginBottom: '3rem',
-            color: '#FFFFFF'
+            color: '#1A1A2E'
           }}>
             À qui je m'adresse
           </h2>
@@ -555,7 +554,7 @@ const Home = () => {
       {/* CONTACT SECTION */}
       <section id="contact" style={{
         padding: '4rem 0',
-        backgroundColor: '#0A0F1E'
+        backgroundColor: '#F5F7FA'
       }}>
         <div style={{
           maxWidth: '800px',
@@ -567,7 +566,7 @@ const Home = () => {
             fontSize: '2.5rem',
             fontFamily: "Syne, sans-serif",
             marginBottom: '2rem',
-            color: '#FFFFFF'
+            color: '#1A1A2E'
           }}>
             Contact
           </h2>
