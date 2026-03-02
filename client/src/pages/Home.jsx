@@ -64,7 +64,7 @@ const Home = () => {
           gap: '2rem'
         }}>
           <img 
-            src="/avatar-placeholder.jpg" 
+            src="/photo-emmanuel.jpg" 
             alt="Emmanuel Nduwayo Bagi"
             style={{ 
               width: 150, 
