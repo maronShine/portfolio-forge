@@ -208,7 +208,7 @@ const Navbar = () => {
             className="hamburger" 
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
-              display: 'block',
+              display: 'block !important',
               position: 'relative',
               zIndex: 9999,
               background: 'transparent',
