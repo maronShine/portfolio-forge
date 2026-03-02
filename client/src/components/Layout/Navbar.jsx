@@ -206,7 +206,7 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger */}
-          <button 
+          <div 
             className="hamburger" 
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
@@ -214,15 +214,16 @@ const Navbar = () => {
               position: 'relative',
               zIndex: 9999,
               background: 'transparent',
-              border: 'none',
               cursor: 'pointer',
-              padding: '8px'
+              padding: '8px',
+              width: '40px',
+              height: '30px'
             }}
           >
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
-          </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
