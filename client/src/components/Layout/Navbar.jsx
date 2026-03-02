@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -13,6 +14,14 @@ const Navbar = () => {
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   const navItems = [
@@ -86,7 +95,7 @@ const Navbar = () => {
             gap: '2rem'
           }}>
             <div style={{
-              display: window.innerWidth > 768 ? 'flex' : 'none',
+              display: !isMobile ? 'flex' : 'none',
               alignItems: 'center',
               gap: '2rem'
             }}>
@@ -111,7 +120,7 @@ const Navbar = () => {
 
             {/* Desktop Auth */}
             <div style={{
-              display: window.innerWidth > 768 ? 'flex' : 'none',
+              display: !isMobile ? 'flex' : 'none',
               alignItems: 'center',
               gap: '1rem'
             }}>
@@ -205,7 +214,7 @@ const Navbar = () => {
             <button 
               onClick={() => setMenuOpen(!menuOpen)}
               style={{
-                display: window.innerWidth <= 768 ? 'flex' : 'none',
+                display: isMobile ? 'flex' : 'none',
                 flexDirection: 'column',
                 gap: '5px',
                 background: 'transparent',
@@ -223,7 +232,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div style={{
-          display: menuOpen && window.innerWidth <= 768 ? 'flex' : 'none',
+          display: menuOpen && isMobile ? 'flex' : 'none',
           position: 'absolute',
           top: '100%',
           left: 0,
