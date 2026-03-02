@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
@@ -35,8 +35,7 @@ const Navbar = () => {
       top: 0,
       left: 0,
       right: 0,
-      backgroundColor: '#FFFFFF',
-      boxShadow: '0 2px 10px rgba(0,0,0,0.08)',
+      backgroundColor: '#1A4D8F',
       zIndex: 1000,
       transition: 'all 0.3s ease'
     }}>
@@ -65,14 +64,14 @@ const Navbar = () => {
               fontFamily: "Georgia, serif",
               fontSize: '1.5rem',
               fontWeight: 600,
-              color: '#1A1A2E',
+              color: '#FFFFFF',
               lineHeight: 1
             }}>
               PortfolioForge
             </div>
             <div style={{
               fontSize: '0.85rem',
-              color: '#666666',
+              color: '#FFFFFF',
               fontFamily: "Georgia, serif",
               lineHeight: 1
             }}>
@@ -96,7 +95,7 @@ const Navbar = () => {
                   key={item.href}
                   to={item.href}
                   style={{
-                    color: location.pathname === item.href ? '#1A4D8F' : '#64748B',
+                    color: location.pathname === item.href ? '#FFFFFF' : '#E0E7FF',
                     fontFamily: "Georgia, serif",
                     fontWeight: 600,
                     padding: '0.5rem 1rem',
@@ -203,46 +202,28 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
+            <button 
+              onClick={() => setMenuOpen(!menuOpen)}
               style={{
                 display: window.innerWidth <= 768 ? 'flex' : 'none',
                 flexDirection: 'column',
-                gap: '4px',
+                gap: '5px',
                 background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
-                padding: '0.5rem'
+                padding: '8px'
               }}
             >
-              <span style={{
-                width: '25px',
-                height: '3px',
-                backgroundColor: '#1A4D8F',
-                transition: 'all 0.3s ease',
-                transform: isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'
-              }} />
-              <span style={{
-                width: '25px',
-                height: '3px',
-                backgroundColor: '#1A4D8F',
-                transition: 'all 0.3s ease',
-                opacity: isOpen ? 0 : 1
-              }} />
-              <span style={{
-                width: '25px',
-                height: '3px',
-                backgroundColor: '#1A4D8F',
-                transition: 'all 0.3s ease',
-                transform: isOpen ? 'rotate(-45deg) translate(7px, -6px)' : 'none'
-              }} />
+              <span style={{width:25, height:3, background:'#FFFFFF', display:'block'}}></span>
+              <span style={{width:25, height:3, background:'#FFFFFF', display:'block'}}></span>
+              <span style={{width:25, height:3, background:'#FFFFFF', display:'block'}}></span>
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div style={{
-          display: isOpen && window.innerWidth <= 768 ? 'flex' : 'none',
+          display: menuOpen && window.innerWidth <= 768 ? 'flex' : 'none',
           position: 'absolute',
           top: '100%',
           left: 0,
