@@ -167,6 +167,8 @@ const Navbar = () => {
             display: flex !important;
             position: relative !important;
             z-index: 1001 !important;
+            visibility: visible !important;
+            opacity: 1 !important;
           }
         }
       `}</style>
