@@ -214,7 +214,7 @@ const Navbar = () => {
             <button 
               onClick={() => setMenuOpen(!menuOpen)}
               style={{
-                display: isMobile ? 'block' : 'none',
+                display: 'block',
                 background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
