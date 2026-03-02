@@ -214,9 +214,9 @@ const Navbar = () => {
                 padding: '8px'
               }}
             >
-              <span style={{width:25, height:3, background:'#FFFFFF', display:'block'}}></span>
-              <span style={{width:25, height:3, background:'#FFFFFF', display:'block'}}></span>
-              <span style={{width:25, height:3, background:'#FFFFFF', display:'block'}}></span>
+              <span style={{width:25, height:3, background:'#FFFFFF', display:'block', borderRadius:2}}></span>
+              <span style={{width:25, height:3, background:'#FFFFFF', display:'block', borderRadius:2}}></span>
+              <span style={{width:25, height:3, background:'#FFFFFF', display:'block', borderRadius:2}}></span>
             </button>
           </div>
         </div>
@@ -238,7 +238,7 @@ const Navbar = () => {
             <Link
               key={item.href}
               to={item.href}
-              onClick={() => setIsOpen(false)}
+              onClick={() => setMenuOpen(false)}
               style={{
                 color: location.pathname === item.href ? '#00C9A7' : '#94A3B8',
                 fontWeight: 500,
@@ -257,7 +257,7 @@ const Navbar = () => {
             <>
               <Link
                 to="/dashboard"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   color: '#94A3B8',
                   fontWeight: 500,
@@ -292,7 +292,7 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   color: '#94A3B8',
                   fontWeight: 500,
@@ -307,7 +307,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/register"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setMenuOpen(false)}
                 style={{
                   color: '#94A3B8',
                   fontWeight: 500,
