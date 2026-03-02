@@ -58,7 +58,7 @@ const Home = () => {
           zIndex: 1
         }}>
           <h1 style={{
-            fontSize: '4rem',
+            fontSize: window.innerWidth <= 768 ? '2.5rem' : '4rem',
             fontFamily: "Syne, sans-serif",
             fontWeight: 800,
             marginBottom: '1rem',
@@ -68,7 +68,7 @@ const Home = () => {
             Emmanuel Nduwayo Bagi
           </h1>
           <h2 style={{
-            fontSize: '2rem',
+            fontSize: window.innerWidth <= 768 ? '1.25rem' : '2rem',
             fontFamily: "DM Sans, sans-serif",
             fontWeight: 500,
             marginBottom: '2rem',
@@ -77,24 +77,25 @@ const Home = () => {
             Architecte de Systèmes CRM & ERP
           </h2>
           <p style={{
-            fontSize: '1.25rem',
+            fontSize: window.innerWidth <= 768 ? '1rem' : '1.25rem',
             fontFamily: "DM Sans, sans-serif",
             color: '#94A3B8',
-            maxWidth: '600px',
+            maxWidth: window.innerWidth <= 768 ? '100%' : '600px',
             margin: '0 auto 3rem',
-            lineHeight: 1.6
+            lineHeight: 1.6,
+            padding: window.innerWidth <= 768 ? '0 1rem' : '0'
           }}>
             Transformation Digitale pour ONG, PME & Entreprises Publiques en Afrique
           </p>
           
           <blockquote style={{
-            fontSize: '1.125rem',
+            fontSize: window.innerWidth <= 768 ? '1rem' : '1.125rem',
             fontFamily: "DM Sans, sans-serif",
             fontStyle: 'italic',
             color: '#94A3B8',
-            maxWidth: '500px',
+            maxWidth: window.innerWidth <= 768 ? '100%' : '500px',
             margin: '0 auto 3rem',
-            padding: '1.5rem',
+            padding: window.innerWidth <= 768 ? '1rem' : '1.5rem',
             backgroundColor: 'rgba(0, 201, 167, 0.1)',
             borderLeft: '4px solid #00C9A7',
             borderRadius: '0.5rem',
@@ -107,7 +108,7 @@ const Home = () => {
           <div style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '3rem',
+            gap: window.innerWidth <= 768 ? '1rem' : '3rem',
             marginBottom: '3rem',
             flexWrap: 'wrap'
           }}>
@@ -115,7 +116,7 @@ const Home = () => {
               <div
                 key={index}
                 style={{
-                  padding: '1.5rem',
+                  padding: window.innerWidth <= 768 ? '1rem' : '1.5rem',
                   backgroundColor: '#1E293B',
                   border: '1px solid #334155',
                   borderRadius: '0.75rem',
@@ -124,11 +125,11 @@ const Home = () => {
                   transform: statsAnimated ? (currentStatIndex === index ? 'scale(1.05)' : 'scale(1)') : 'scale(0.95)',
                   transition: 'all 0.5s ease',
                   transitionDelay: `${index * 200}ms`,
-                  minWidth: '150px'
+                  minWidth: window.innerWidth <= 768 ? '120px' : '150px'
                 }}
               >
                 <div style={{
-                  fontSize: '2.5rem',
+                  fontSize: window.innerWidth <= 768 ? '2rem' : '2.5rem',
                   fontWeight: 'bold',
                   color: '#00C9A7',
                   fontFamily: "Syne, sans-serif"
@@ -152,7 +153,9 @@ const Home = () => {
             display: 'flex',
             justifyContent: 'center',
             gap: '1rem',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
+            alignItems: 'center'
           }}>
             <a 
               href="#services" 
@@ -161,7 +164,7 @@ const Home = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.5rem',
-                padding: '1rem 2rem',
+                padding: window.innerWidth <= 768 ? '1rem' : '1rem 2rem',
                 backgroundColor: '#00C9A7',
                 color: 'white',
                 border: 'none',
@@ -172,7 +175,9 @@ const Home = () => {
                 textDecoration: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                minHeight: '3rem'
+                minHeight: '3rem',
+                width: window.innerWidth <= 768 ? '100%' : 'auto',
+                maxWidth: window.innerWidth <= 768 ? '300px' : 'none'
               }}
             >
               Voir mes services
@@ -187,7 +192,7 @@ const Home = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.5rem',
-                padding: '1rem 2rem',
+                padding: window.innerWidth <= 768 ? '1rem' : '1rem 2rem',
                 backgroundColor: 'transparent',
                 color: '#00C9A7',
                 border: '1px solid #00C9A7',
@@ -198,7 +203,9 @@ const Home = () => {
                 textDecoration: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
-                minHeight: '3rem'
+                minHeight: '3rem',
+                width: window.innerWidth <= 768 ? '100%' : 'auto',
+                maxWidth: window.innerWidth <= 768 ? '300px' : 'none'
               }}
             >
               Créer mon portfolio

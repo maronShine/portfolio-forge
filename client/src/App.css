@@ -424,8 +424,9 @@ a:hover {
   font-size: 0.875rem;
 }
 
-/* Responsive */
+/* Responsive Mobile First */
 @media (max-width: 768px) {
+  /* Container & Spacing */
   .container {
     padding: 0 var(--space-sm);
   }
@@ -434,33 +435,219 @@ a:hover {
     padding: 0 var(--space-sm);
   }
   
+  /* Grid System - Force 1 column on mobile */
   .grid-2,
   .grid-3,
   .grid-4 {
     grid-template-columns: 1fr;
   }
   
+  /* Typography - Smaller fonts on mobile */
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.125rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.875rem; }
+  
+  /* Navbar - Mobile menu styles */
   .navbar-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: 0;
+  }
+  
+  .navbar-nav.mobile-open {
+    display: flex;
+  }
+  
+  .navbar-link {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+  }
+  
+  .navbar-link:last-child {
+    border-bottom: none;
+  }
+  
+  /* Mobile hamburger button */
+  .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-xs);
+  }
+  
+  .navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+  
+  /* Buttons - Full width on mobile */
+  .btn {
+    width: 100%;
+    padding: var(--space-sm);
+    font-size: 0.875rem;
+    justify-content: center;
+  }
+  
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    width: 100%;
+  }
+  
+  /* Cards - Full width */
+  .card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+  
+  /* Forms - Full width inputs */
+  .form-input,
+  .form-textarea {
+    padding: var(--space-sm);
+    font-size: 1rem;
+  }
+  
+  /* Footer */
+  .footer-links {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+  
+  /* Sections */
+  .section {
+    padding: var(--space-lg) 0;
+  }
+  
+  /* Flexbox - Stack on mobile */
+  .flex-between {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: stretch;
+  }
+  
+  /* Dashboard specific */
+  .portfolio-card {
+    margin-bottom: var(--space-md);
+  }
+  
+  .portfolio-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  
+  .portfolio-actions .btn {
+    width: 100%;
+    margin: 0;
+  }
+  
+  /* Multi-step form */
+  .form-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .preview-panel {
+    position: static;
+    margin-top: var(--space-md);
+  }
+  
+  /* Progress bar */
+  .progress-steps {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .progress-line {
+    display: none;
+  }
+  
+  /* Hero section */
+  .hero-content {
+    padding: var(--space-md);
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
+  
+  .stat-card {
+    text-align: center;
+  }
+  
+  /* Services grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Contact grid */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller adjustments for very small screens */
+  .container {
+    padding: 0 var(--space-xs);
+  }
+  
+  .navbar-content {
+    padding: 0 var(--space-xs);
+  }
+  
+  .card {
+    padding: var(--space-sm);
+  }
+  
+  .section {
+    padding: var(--space-md) 0;
+  }
+  
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  h3 { font-size: 1.125rem; }
   
   .btn {
     padding: var(--space-xs) var(--space-sm);
     font-size: 0.8rem;
   }
   
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-}
-
-@media (max-width: 480px) {
-  .card {
-    padding: var(--space-md);
+  .hero-title {
+    font-size: 1.75rem;
   }
   
-  .section {
-    padding: var(--space-lg) 0;
+  .hero-subtitle {
+    font-size: 1rem;
   }
 }
 
