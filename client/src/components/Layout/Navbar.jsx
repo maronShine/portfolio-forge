@@ -54,17 +54,30 @@ const Navbar = () => {
           <Link 
             to="/" 
             style={{
+              textDecoration: 'none',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: '0.25rem'
+            }}
+          >
+            <div style={{
               fontFamily: "Georgia, serif",
               fontSize: '1.5rem',
               fontWeight: 600,
               color: '#1A1A2E',
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem'
-            }}
-          >
-            PortfolioForge
+              lineHeight: 1
+            }}>
+              PortfolioForge
+            </div>
+            <div style={{
+              fontSize: '0.85rem',
+              color: '#666666',
+              fontFamily: "Georgia, serif",
+              lineHeight: 1
+            }}>
+              Emmanuel Bagi
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -196,7 +209,7 @@ const Navbar = () => {
                 display: window.innerWidth <= 768 ? 'flex' : 'none',
                 flexDirection: 'column',
                 gap: '4px',
-                background: 'none',
+                background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 padding: '0.5rem'
@@ -205,21 +218,21 @@ const Navbar = () => {
               <span style={{
                 width: '25px',
                 height: '3px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#1A4D8F',
                 transition: 'all 0.3s ease',
                 transform: isOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'
               }} />
               <span style={{
                 width: '25px',
                 height: '3px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#1A4D8F',
                 transition: 'all 0.3s ease',
                 opacity: isOpen ? 0 : 1
               }} />
               <span style={{
                 width: '25px',
                 height: '3px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#1A4D8F',
                 transition: 'all 0.3s ease',
                 transform: isOpen ? 'rotate(-45deg) translate(7px, -6px)' : 'none'
               }} />
