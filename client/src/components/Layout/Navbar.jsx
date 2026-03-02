@@ -113,7 +113,7 @@ const Navbar = () => {
           cursor: pointer;
         }
         .hamburger {
-          display: flex !important;
+          display: none !important;
           flex-direction: column;
           gap: 5px;
           background: transparent;
@@ -121,9 +121,6 @@ const Navbar = () => {
           cursor: pointer;
           padding: 8px;
           z-index: 1001;
-          position: fixed;
-          right: 20px;
-          top: 20px;
         }
         .hamburger-bar {
           width: 25px;
@@ -168,10 +165,8 @@ const Navbar = () => {
           }
           .hamburger {
             display: flex !important;
-            position: relative !important;
-            z-index: 1001 !important;
-            visibility: visible !important;
-            opacity: 1 !important;
+            align-items: center;
+            justify-content: center;
           }
         }
       `}</style>
@@ -212,16 +207,6 @@ const Navbar = () => {
           <div 
             className="hamburger" 
             onClick={() => setMenuOpen(!menuOpen)}
-            style={{
-              display: 'block !important',
-              position: 'relative',
-              zIndex: 9999,
-              background: 'transparent',
-              cursor: 'pointer',
-              padding: '8px',
-              width: '40px',
-              height: '30px'
-            }}
           >
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
