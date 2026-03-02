@@ -6,6 +6,15 @@ const Dashboard = () => {
   const [portfolios, setPortfolios] = useState([])
   const [user, setUser] = useState(null)
   const [shareMessage, setShareMessage] = useState('')
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Charger les données au montage
   useEffect(() => {
@@ -79,22 +88,22 @@ const Dashboard = () => {
       <header style={{
         backgroundColor: '#1A2332',
         borderBottom: '1px solid #334155',
-        padding: window.innerWidth <= 768 ? '1rem 0' : '2rem 0'
+        padding: isMobile ? '1rem 0' : '2rem 0'
       }}>
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: window.innerWidth <= 768 ? '0 1rem' : '0 2rem',
+          padding: isMobile ? '0 1rem' : '0 2rem',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: window.innerWidth <= 768 ? 'flex-start' : 'center',
-          flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
-          gap: window.innerWidth <= 768 ? '1rem' : '0'
+          alignItems: isMobile ? 'flex-start' : 'center',
+          flexDirection: isMobile ? 'column' : 'row',
+          gap: isMobile ? '1rem' : '0'
         }}>
           <div>
             <h1 style={{
               color: '#FFFFFF',
-              fontSize: window.innerWidth <= 768 ? '1.5rem' : '2rem',
+              fontSize: isMobile ? '1.5rem' : '2rem',
               fontFamily: "Syne, sans-serif",
               marginBottom: '0.5rem'
             }}>
@@ -116,7 +125,7 @@ const Dashboard = () => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              padding: window.innerWidth <= 768 ? '0.75rem 1rem' : '1rem 2rem',
+              padding: isMobile ? '0.75rem 1rem' : '1rem 2rem',
               backgroundColor: '#00C9A7',
               color: 'white',
               border: 'none',
@@ -126,7 +135,7 @@ const Dashboard = () => {
               fontSize: '0.875rem',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
-              width: window.innerWidth <= 768 ? '100%' : 'auto'
+              width: isMobile ? '100%' : 'auto'
             }}
           >
             <svg style={{width: '1.25rem', height: '1.25rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +150,7 @@ const Dashboard = () => {
       <main style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        padding: window.innerWidth <= 768 ? '1rem' : '2rem'
+        padding: isMobile ? '1rem' : '2rem'
       }}>
         {/* Share Message */}
         {shareMessage && (
@@ -162,7 +171,7 @@ const Dashboard = () => {
         {portfolios.length > 0 ? (
           <div style={{
             display: 'grid',
-            gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(auto-fit, minmax(350px, 1fr))',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: '2rem'
           }}>
             {portfolios.map((portfolio) => (
@@ -172,7 +181,7 @@ const Dashboard = () => {
                   backgroundColor: '#1E293B',
                   border: '1px solid #334155',
                   borderRadius: '0.75rem',
-                  padding: window.innerWidth <= 768 ? '1rem' : '1.5rem',
+                  padding: isMobile ? '1rem' : '1.5rem',
                   boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease'
