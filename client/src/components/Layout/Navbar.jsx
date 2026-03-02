@@ -204,7 +204,19 @@ const Navbar = () => {
           </div>
 
           {/* Hamburger */}
-          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <button 
+            className="hamburger" 
+            onClick={() => setMenuOpen(!menuOpen)}
+            style={{
+              display: 'block',
+              position: 'relative',
+              zIndex: 9999,
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '8px'
+            }}
+          >
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
