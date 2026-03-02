@@ -113,13 +113,14 @@ const Navbar = () => {
           cursor: pointer;
         }
         .hamburger {
-          display: none;
+          display: none !important;
           flex-direction: column;
           gap: 5px;
           background: transparent;
           border: none;
           cursor: pointer;
           padding: 8px;
+          z-index: 1001;
         }
         .hamburger-bar {
           width: 25px;
@@ -164,6 +165,8 @@ const Navbar = () => {
           }
           .hamburger {
             display: flex !important;
+            position: relative !important;
+            z-index: 1001 !important;
           }
         }
       `}</style>
