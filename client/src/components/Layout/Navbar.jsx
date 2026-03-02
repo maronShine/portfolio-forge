@@ -214,18 +214,17 @@ const Navbar = () => {
             <button 
               onClick={() => setMenuOpen(!menuOpen)}
               style={{
-                display: isMobile ? 'flex' : 'none',
-                flexDirection: 'column',
-                gap: '5px',
+                display: isMobile ? 'block' : 'none',
                 background: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
-                padding: '8px'
+                padding: '8px',
+                marginLeft: 'auto'
               }}
             >
-              <span style={{width:25, height:3, background:'#FFFFFF', display:'block', borderRadius:2}}></span>
-              <span style={{width:25, height:3, background:'#FFFFFF', display:'block', borderRadius:2}}></span>
-              <span style={{width:25, height:3, background:'#FFFFFF', display:'block', borderRadius:2}}></span>
+              <div style={{width:25, height:3, background:'#FFFFFF', marginBottom:5, borderRadius:2}}></div>
+              <div style={{width:25, height:3, background:'#FFFFFF', marginBottom:5, borderRadius:2}}></div>
+              <div style={{width:25, height:3, background:'#FFFFFF', borderRadius:2}}></div>
             </button>
           </div>
         </div>
