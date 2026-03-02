@@ -12,6 +12,7 @@ const CreatePortfolio = () => {
     lastName: '',
     title: '',
     tagline: '',
+    profileImage: '', // Photo de profil en base64
     stats: [
       { value: '', label: '' },
       { value: '', label: '' },
@@ -144,6 +145,7 @@ const CreatePortfolio = () => {
         lastName: formData.lastName,
         title: formData.title,
         tagline: formData.tagline,
+        profileImage: formData.profileImage,
         stats: formData.stats
       },
       about: {
@@ -289,6 +291,122 @@ const CreatePortfolio = () => {
         placeholder="Tagline ou phrase d'accroche"
         rows={3}
       />
+      
+      {/* Photo de profil */}
+      <div>
+        <label style={{
+          display: 'block',
+          fontFamily: "DM Sans, sans-serif",
+          fontWeight: 500,
+          color: '#FFFFFF',
+          marginBottom: '0.5rem',
+          fontSize: '0.875rem'
+        }}>Photo de profil</label>
+        
+        <div style={{display: 'flex', alignItems: 'center', gap: '2rem'}}>
+          {formData.profileImage ? (
+            <img 
+              src={formData.profileImage} 
+              alt="Aperçu" 
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '3px solid #1A4D8F'
+              }}
+            />
+          ) : (
+            <div style={{
+              width: 100,
+              height: 100,
+              borderRadius: '50%',
+              backgroundColor: '#1A4D8F',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#FFFFFF',
+              fontSize: '2rem',
+              fontWeight: 700,
+              fontFamily: "Syne, sans-serif"
+            }}>
+              {formData.firstName ? formData.firstName[0] : 'E'}{formData.lastName ? formData.lastName[0] : 'N'}
+            </div>
+          )}
+          
+          <div style={{flex: 1}}>
+            <input
+              type="file"
+              id="profileImage"
+              accept="image/*"
+              onChange={(e) => {
+                const file = e.target.files[0]
+                if (file) {
+                  const reader = new FileReader()
+                  reader.onloadend = () => {
+                    handleChange('profileImage', reader.result)
+                  }
+                  reader.readAsDataURL(file)
+                }
+              }}
+              style={{display: 'none'}}
+            />
+            <label
+              htmlFor="profileImage"
+              style={{
+                display: 'inline-block',
+                padding: '0.75rem 1.5rem',
+                backgroundColor: '#1A4D8F',
+                color: '#FFFFFF',
+                borderRadius: '0.5rem',
+                cursor: 'pointer',
+                fontFamily: "DM Sans, sans-serif",
+                fontSize: '0.875rem',
+                fontWeight: 500,
+                transition: 'background-color 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = '#2A5D9F'
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = '#1A4D8F'
+              }}
+            >
+              {formData.profileImage ? 'Changer la photo' : 'Ajouter une photo'}
+            </label>
+            {formData.profileImage && (
+              <button
+                type="button"
+                onClick={() => handleChange('profileImage', '')}
+                style={{
+                  display: 'inline-block',
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: 'transparent',
+                  color: '#EF4444',
+                  border: '1px solid #EF4444',
+                  borderRadius: '0.5rem',
+                  cursor: 'pointer',
+                  fontFamily: "DM Sans, sans-serif",
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  marginLeft: '1rem',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = '#EF4444'
+                  e.currentTarget.style.color = '#FFFFFF'
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent'
+                  e.currentTarget.style.color = '#EF4444'
+                }}
+              >
+                Supprimer
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
       
       <div>
         <label style={{

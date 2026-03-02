@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#F0F4F8',
       color: '#1A1A2E'
     }}>
       {/* HERO SECTION */}
@@ -49,7 +49,7 @@ const Home = () => {
         justifyContent: 'center',
         padding: '60px 16px',
         position: 'relative',
-        background: 'linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%)',
+        background: 'linear-gradient(135deg, #F0F4F8 0%, #FFFFFF 50%, #F0F4F8 100%)',
         overflowX: 'hidden',
         maxWidth: '100vw'
       }}>
@@ -57,22 +57,39 @@ const Home = () => {
           maxWidth: '1200px',
           margin: '0 auto',
           textAlign: 'center',
-          zIndex: 1
+          zIndex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '2rem'
         }}>
-          <h1 style={{
-            fontSize: 'clamp(1.8rem, 6vw, 4rem)',
-            fontFamily: "Syne, sans-serif",
-            fontWeight: 800,
-            marginBottom: '1rem',
-            color: '#1A1A2E',
-            lineHeight: 1.1,
-            overflowWrap: 'break-word',
-            wordBreak: 'break-word',
-            padding: '0 16px',
-            textAlign: 'center'
-          }}>
-            Emmanuel Nduwayo Bagi
-          </h1>
+          <img 
+            src="/avatar-placeholder.jpg" 
+            alt="Emmanuel Nduwayo Bagi"
+            style={{ 
+              width: 150, 
+              height: 150, 
+              borderRadius: "50%", 
+              objectFit: "cover", 
+              border: "3px solid #1A4D8F",
+              boxShadow: '0 10px 25px rgba(26, 77, 143, 0.2)'
+            }}
+          />
+          <div>
+            <h1 style={{
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontFamily: "Syne, sans-serif",
+              fontWeight: 700,
+              marginBottom: '1rem',
+              color: '#1A1A2E',
+              lineHeight: 1.1,
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word',
+              padding: '0 16px',
+              textAlign: 'center'
+            }}>
+              Emmanuel Nduwayo Bagi
+            </h1>
           <h2 style={{
             fontSize: window.innerWidth <= 768 ? '1.25rem' : '2rem',
             fontFamily: "DM Sans, sans-serif",
@@ -219,6 +236,7 @@ const Home = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
               </svg>
             </Link>
+          </div>
           </div>
         </div>
       </section>
