@@ -159,7 +159,7 @@ const Navbar = () => {
           width: 100%;
           font-size: 1rem;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .navbar-desktop {
             display: none !important;
           }
@@ -167,6 +167,12 @@ const Navbar = () => {
             display: flex !important;
             align-items: center;
             justify-content: center;
+          }
+          .navbar-logo-title {
+            font-size: 1.2rem !important;
+          }
+          .navbar-logo-sub {
+            font-size: 0.7rem !important;
           }
         }
       `}</style>
