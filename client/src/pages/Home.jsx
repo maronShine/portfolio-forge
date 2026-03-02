@@ -562,7 +562,7 @@ const Home = () => {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: '2rem'
           }}>
             <div style={{
@@ -581,13 +581,13 @@ const Home = () => {
               }}>
                 Email
               </h3>
-              <a href="mailto:contact@emmanuel-nduwayo.com" style={{
+              <a href="mailto:emmanuel.bagi.n@gmail.com" style={{
                 color: '#00C9A7',
                 fontFamily: "DM Sans, sans-serif",
                 textDecoration: 'none',
                 fontSize: '1rem'
               }}>
-                contact@emmanuel-nduwayo.com
+                emmanuel.bagi.n@gmail.com
               </a>
             </div>
             
@@ -607,14 +607,35 @@ const Home = () => {
               }}>
                 Téléphone
               </h3>
-              <a href="tel:+243123456789" style={{
+              <div style={{
                 color: '#00C9A7',
                 fontFamily: "DM Sans, sans-serif",
-                textDecoration: 'none',
+                fontSize: '1rem',
+                marginBottom: '0.5rem'
+              }}>
+                <a href="tel:+243995504241" style={{
+                  color: '#00C9A7',
+                  fontFamily: "DM Sans, sans-serif",
+                  textDecoration: 'none',
+                  fontSize: '1rem'
+                }}>
+                  +243 995 504 241
+                </a>
+              </div>
+              <div style={{
+                color: '#00C9A7',
+                fontFamily: "DM Sans, sans-serif",
                 fontSize: '1rem'
               }}>
-                +243 123 456 789
-              </a>
+                <a href="tel:+243839185581" style={{
+                  color: '#00C9A7',
+                  fontFamily: "DM Sans, sans-serif",
+                  textDecoration: 'none',
+                  fontSize: '1rem'
+                }}>
+                  +243 839 185 581
+                </a>
+              </div>
             </div>
             
             <div style={{
@@ -638,8 +659,34 @@ const Home = () => {
                 fontFamily: "DM Sans, sans-serif",
                 fontSize: '1rem'
               }}>
-                Goma, RDC
+                Kinshasa, RDC
               </p>
+            </div>
+            
+            <div style={{
+              backgroundColor: '#1E293B',
+              border: '1px solid #334155',
+              borderRadius: '0.75rem',
+              padding: '2rem',
+              textAlign: 'center'
+            }}>
+              <div style={{fontSize: '3rem', marginBottom: '1rem'}}>💼</div>
+              <h3 style={{
+                fontSize: '1.25rem',
+                fontFamily: "Syne, sans-serif",
+                marginBottom: '1rem',
+                color: '#FFFFFF'
+              }}>
+                LinkedIn
+              </h3>
+              <a href="https://www.linkedin.com/in/emmanuel-bagi-n" target="_blank" rel="noopener noreferrer" style={{
+                color: '#00C9A7',
+                fontFamily: "DM Sans, sans-serif",
+                textDecoration: 'none',
+                fontSize: '1rem'
+              }}>
+                linkedin.com/in/emmanuel-bagi-n
+              </a>
             </div>
           </div>
         </div>
