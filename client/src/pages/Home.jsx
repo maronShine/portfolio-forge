@@ -38,8 +38,8 @@ const Home = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#0A0F1E',
-      color: '#FFFFFF'
+      backgroundColor: '#FFFFFF',
+      color: '#1A1A2E'
     }}>
       {/* HERO SECTION */}
       <section style={{
@@ -47,10 +47,11 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: window.innerWidth <= 768 ? '20px 15px' : '2rem',
+        padding: '60px 16px',
         position: 'relative',
-        background: 'linear-gradient(135deg, #0A0F1E 0%, #1A2332 50%, #0A0F1E 100%)',
-        overflowX: 'hidden'
+        background: 'linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%)',
+        overflowX: 'hidden',
+        maxWidth: '100vw'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -59,14 +60,16 @@ const Home = () => {
           zIndex: 1
         }}>
           <h1 style={{
-            fontSize: window.innerWidth <= 768 ? '2.5rem' : '4rem',
+            fontSize: 'clamp(1.8rem, 6vw, 4rem)',
             fontFamily: "Syne, sans-serif",
             fontWeight: 800,
             marginBottom: '1rem',
-            color: '#FFFFFF',
+            color: '#1A1A2E',
             lineHeight: 1.1,
+            overflowWrap: 'break-word',
             wordBreak: 'break-word',
-            overflowWrap: 'break-word'
+            padding: '0 16px',
+            textAlign: 'center'
           }}>
             Emmanuel Nduwayo Bagi
           </h1>
@@ -75,14 +78,14 @@ const Home = () => {
             fontFamily: "DM Sans, sans-serif",
             fontWeight: 500,
             marginBottom: '2rem',
-            color: '#00C9A7'
+            color: '#1A4D8F'
           }}>
             Architecte de Systèmes CRM & ERP
           </h2>
           <p style={{
             fontSize: window.innerWidth <= 768 ? '1rem' : '1.25rem',
             fontFamily: "DM Sans, sans-serif",
-            color: '#94A3B8',
+            color: '#64748B',
             maxWidth: window.innerWidth <= 768 ? '100%' : '600px',
             margin: '0 auto 3rem',
             lineHeight: 1.6,
@@ -566,8 +569,8 @@ const Home = () => {
             gap: '2rem'
           }}>
             <div style={{
-              backgroundColor: '#1E293B',
-              border: '1px solid #334155',
+              backgroundColor: '#F8F9FA',
+              border: '1px solid #E2E8F0',
               borderRadius: '0.75rem',
               padding: '2rem',
               textAlign: 'center'
@@ -577,23 +580,28 @@ const Home = () => {
                 fontSize: '1.25rem',
                 fontFamily: "Syne, sans-serif",
                 marginBottom: '1rem',
-                color: '#FFFFFF'
+                color: '#1A1A2E'
               }}>
                 Email
               </h3>
               <a href="mailto:emmanuel.bagi.n@gmail.com" style={{
-                color: '#00C9A7',
+                color: '#1A4D8F',
                 fontFamily: "DM Sans, sans-serif",
                 textDecoration: 'none',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                transition: 'color 0.2s ease'
+              }} onMouseOver={(e) => {
+                e.currentTarget.style.color = '#00C9A7'
+              }} onMouseOut={(e) => {
+                e.currentTarget.style.color = '#1A4D8F'
               }}>
                 emmanuel.bagi.n@gmail.com
               </a>
             </div>
             
             <div style={{
-              backgroundColor: '#1E293B',
-              border: '1px solid #334155',
+              backgroundColor: '#F8F9FA',
+              border: '1px solid #E2E8F0',
               borderRadius: '0.75rem',
               padding: '2rem',
               textAlign: 'center'
@@ -603,35 +611,45 @@ const Home = () => {
                 fontSize: '1.25rem',
                 fontFamily: "Syne, sans-serif",
                 marginBottom: '1rem',
-                color: '#FFFFFF'
+                color: '#1A1A2E'
               }}>
-                Téléphone
+                WhatsApp
               </h3>
               <div style={{
-                color: '#00C9A7',
+                color: '#1A4D8F',
                 fontFamily: "DM Sans, sans-serif",
                 fontSize: '1rem',
                 marginBottom: '0.5rem'
               }}>
-                <a href="tel:+243995504241" style={{
-                  color: '#00C9A7',
+                <a href="https://wa.me/243995504241" target="_blank" style={{
+                  color: '#1A4D8F',
                   fontFamily: "DM Sans, sans-serif",
                   textDecoration: 'none',
-                  fontSize: '1rem'
+                  fontSize: '1rem',
+                  transition: 'color 0.2s ease'
+                }} onMouseOver={(e) => {
+                  e.currentTarget.style.color = '#00C9A7'
+                }} onMouseOut={(e) => {
+                  e.currentTarget.style.color = '#1A4D8F'
                 }}>
                   +243 995 504 241
                 </a>
               </div>
               <div style={{
-                color: '#00C9A7',
+                color: '#1A4D8F',
                 fontFamily: "DM Sans, sans-serif",
                 fontSize: '1rem'
               }}>
-                <a href="tel:+243839185581" style={{
-                  color: '#00C9A7',
+                <a href="https://wa.me/243839185581" target="_blank" style={{
+                  color: '#1A4D8F',
                   fontFamily: "DM Sans, sans-serif",
                   textDecoration: 'none',
-                  fontSize: '1rem'
+                  fontSize: '1rem',
+                  transition: 'color 0.2s ease'
+                }} onMouseOver={(e) => {
+                  e.currentTarget.style.color = '#00C9A7'
+                }} onMouseOut={(e) => {
+                  e.currentTarget.style.color = '#1A4D8F'
                 }}>
                   +243 839 185 581
                 </a>
@@ -639,8 +657,8 @@ const Home = () => {
             </div>
             
             <div style={{
-              backgroundColor: '#1E293B',
-              border: '1px solid #334155',
+              backgroundColor: '#F8F9FA',
+              border: '1px solid #E2E8F0',
               borderRadius: '0.75rem',
               padding: '2rem',
               textAlign: 'center'
@@ -650,12 +668,12 @@ const Home = () => {
                 fontSize: '1.25rem',
                 fontFamily: "Syne, sans-serif",
                 marginBottom: '1rem',
-                color: '#FFFFFF'
+                color: '#1A1A2E'
               }}>
                 Localisation
               </h3>
               <p style={{
-                color: '#94A3B8',
+                color: '#64748B',
                 fontFamily: "DM Sans, sans-serif",
                 fontSize: '1rem'
               }}>
@@ -664,8 +682,8 @@ const Home = () => {
             </div>
             
             <div style={{
-              backgroundColor: '#1E293B',
-              border: '1px solid #334155',
+              backgroundColor: '#F8F9FA',
+              border: '1px solid #E2E8F0',
               borderRadius: '0.75rem',
               padding: '2rem',
               textAlign: 'center'
@@ -675,15 +693,20 @@ const Home = () => {
                 fontSize: '1.25rem',
                 fontFamily: "Syne, sans-serif",
                 marginBottom: '1rem',
-                color: '#FFFFFF'
+                color: '#1A1A2E'
               }}>
                 LinkedIn
               </h3>
               <a href="https://www.linkedin.com/in/emmanuel-bagi-n" target="_blank" rel="noopener noreferrer" style={{
-                color: '#00C9A7',
+                color: '#1A4D8F',
                 fontFamily: "DM Sans, sans-serif",
                 textDecoration: 'none',
-                fontSize: '1rem'
+                fontSize: '1rem',
+                transition: 'color 0.2s ease'
+              }} onMouseOver={(e) => {
+                e.currentTarget.style.color = '#00C9A7'
+              }} onMouseOut={(e) => {
+                e.currentTarget.style.color = '#1A4D8F'
               }}>
                 linkedin.com/in/emmanuel-bagi-n
               </a>
