@@ -47,9 +47,10 @@ const Home = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem',
+        padding: window.innerWidth <= 768 ? '20px 15px' : '2rem',
         position: 'relative',
-        background: 'linear-gradient(135deg, #0A0F1E 0%, #1A2332 50%, #0A0F1E 100%)'
+        background: 'linear-gradient(135deg, #0A0F1E 0%, #1A2332 50%, #0A0F1E 100%)',
+        overflowX: 'hidden'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -63,7 +64,9 @@ const Home = () => {
             fontWeight: 800,
             marginBottom: '1rem',
             color: '#FFFFFF',
-            lineHeight: 1.1
+            lineHeight: 1.1,
+            wordBreak: 'break-word',
+            overflowWrap: 'break-word'
           }}>
             Emmanuel Nduwayo Bagi
           </h1>
