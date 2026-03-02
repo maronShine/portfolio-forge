@@ -113,7 +113,7 @@ const Navbar = () => {
           cursor: pointer;
         }
         .hamburger {
-          display: none !important;
+          display: flex !important;
           flex-direction: column;
           gap: 5px;
           background: transparent;
@@ -121,6 +121,9 @@ const Navbar = () => {
           cursor: pointer;
           padding: 8px;
           z-index: 1001;
+          position: fixed;
+          right: 20px;
+          top: 20px;
         }
         .hamburger-bar {
           width: 25px;
