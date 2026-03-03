@@ -41,6 +41,11 @@ const Home = () => {
       backgroundColor: '#F5F7FA',
       color: '#1A1A2E'
     }}>
+      {/* Google Fonts — Oswald + DM Sans + Syne */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700&display=swap');
+      `}</style>
+
       {/* HERO SECTION */}
       <section style={{
         minHeight: '100vh',
@@ -51,34 +56,52 @@ const Home = () => {
         position: 'relative',
         background: 'linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 50%, #F5F7FA 100%)',
         overflowX: 'hidden',
-        maxWidth: '100vw'
+        maxWidth: '100vw',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           maxWidth: '1200px',
+          width: '100%',
           margin: '0 auto',
           textAlign: 'center',
           zIndex: 1,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '2rem'
+          gap: '2rem',
+          boxSizing: 'border-box'
         }}>
-          <img 
-            src="/photo-emmanuel.jpg" 
-            alt="Emmanuel Nduwayo Bagi"
-            style={{ 
-              width: 150, 
-              height: 150, 
-              borderRadius: "50%", 
-              objectFit: "cover", 
-              border: "3px solid #1A4D8F"
-            }}
-          />
-          <div>
+
+          {/* ── Photo corrigée ── */}
+          <div style={{
+            width: 160,
+            height: 160,
+            borderRadius: '50%',
+            border: '3px solid #1A4D8F',
+            overflow: 'hidden',
+            flexShrink: 0,
+            boxShadow: '0 8px 32px rgba(26,77,143,0.18)'
+          }}>
+            <img
+              src="/photo-emmanuel.jpg"
+              alt="Emmanuel Nduwayo Bagi"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                display: 'block'
+              }}
+            />
+          </div>
+
+          <div style={{ width: '100%' }}>
+            {/* ── Nom en Oswald Regular ── */}
             <h1 style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 700,
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 400,           /* Regular */
+              letterSpacing: '0.02em',
               marginBottom: '1rem',
               color: '#1A1A2E',
               lineHeight: 1.1,
@@ -89,153 +112,150 @@ const Home = () => {
             }}>
               Emmanuel Nduwayo Bagi
             </h1>
-          <h2 style={{
-            fontSize: window.innerWidth <= 768 ? '1.25rem' : '2rem',
-            fontFamily: "DM Sans, sans-serif",
-            fontWeight: 500,
-            marginBottom: '2rem',
-            color: '#1A4D8F'
-          }}>
-            Architecte de Systèmes CRM & ERP
-          </h2>
-          <p style={{
-            fontSize: window.innerWidth <= 768 ? '1rem' : '1.25rem',
-            fontFamily: "DM Sans, sans-serif",
-            color: '#64748B',
-            maxWidth: window.innerWidth <= 768 ? '100%' : '600px',
-            margin: '0 auto 3rem',
-            lineHeight: 1.6,
-            padding: window.innerWidth <= 768 ? '0 1rem' : '0'
-          }}>
-            Transformation Digitale pour ONG, PME & Entreprises Publiques en Afrique
-          </p>
-          
-          <blockquote style={{
-            fontSize: window.innerWidth <= 768 ? '1rem' : '1.125rem',
-            fontFamily: "DM Sans, sans-serif",
-            fontStyle: 'italic',
-            color: '#94A3B8',
-            maxWidth: window.innerWidth <= 768 ? '100%' : '500px',
-            margin: '0 auto 3rem',
-            padding: window.innerWidth <= 768 ? '1rem' : '1.5rem',
-            backgroundColor: 'rgba(0, 201, 167, 0.1)',
-            borderLeft: '4px solid #00C9A7',
-            borderRadius: '0.5rem',
-            textAlign: 'left'
-          }}>
-            "Je conçois et déploie des systèmes d'information qui transforment les opérations logistiques en Afrique — des outils qui fonctionnent vraiment sur le terrain."
-          </blockquote>
 
-          {/* Animated Stats */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: window.innerWidth <= 768 ? '1rem' : '3rem',
-            marginBottom: '3rem',
-            flexWrap: 'wrap'
-          }}>
-            {stats.map((stat, index) => (
-              <div
-                key={index}
+            <h2 style={{
+              fontSize: 'clamp(1.1rem, 3vw, 2rem)',
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 500,
+              marginBottom: '2rem',
+              color: '#1A4D8F'
+            }}>
+              Architecte de Systèmes CRM & ERP
+            </h2>
+
+            <p style={{
+              fontSize: 'clamp(0.95rem, 2vw, 1.25rem)',
+              fontFamily: "'DM Sans', sans-serif",
+              color: '#64748B',
+              maxWidth: '600px',
+              margin: '0 auto 3rem',
+              lineHeight: 1.6,
+              padding: '0 1rem'
+            }}>
+              Transformation Digitale pour ONG, PME & Entreprises Publiques en Afrique
+            </p>
+
+            <blockquote style={{
+              fontSize: 'clamp(0.9rem, 2vw, 1.125rem)',
+              fontFamily: "'DM Sans', sans-serif",
+              fontStyle: 'italic',
+              color: '#94A3B8',
+              maxWidth: '500px',
+              margin: '0 auto 3rem',
+              padding: '1.25rem 1.5rem',
+              backgroundColor: 'rgba(0, 201, 167, 0.1)',
+              borderLeft: '4px solid #00C9A7',
+              borderRadius: '0.5rem',
+              textAlign: 'left'
+            }}>
+              "Je conçois et déploie des systèmes d'information qui transforment les opérations logistiques en Afrique — des outils qui fonctionnent vraiment sur le terrain."
+            </blockquote>
+
+            {/* Animated Stats */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1rem',
+              marginBottom: '3rem',
+              flexWrap: 'wrap'
+            }}>
+              {stats.map((stat, index) => (
+                <div
+                  key={index}
+                  style={{
+                    padding: '1.25rem 1.5rem',
+                    backgroundColor: '#1E293B',
+                    border: '1px solid #334155',
+                    borderRadius: '0.75rem',
+                    textAlign: 'center',
+                    opacity: statsAnimated ? (currentStatIndex === index ? 1 : 0.7) : 0,
+                    transform: statsAnimated ? (currentStatIndex === index ? 'scale(1.05)' : 'scale(1)') : 'scale(0.95)',
+                    transition: 'all 0.5s ease',
+                    transitionDelay: `${index * 200}ms`,
+                    minWidth: '130px'
+                  }}
+                >
+                  <div style={{
+                    fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+                    fontWeight: 'bold',
+                    color: '#00C9A7',
+                    fontFamily: "'Oswald', sans-serif"
+                  }}>
+                    {stat.value}
+                  </div>
+                  <div style={{
+                    fontSize: '0.875rem',
+                    color: '#94A3B8',
+                    fontFamily: "'DM Sans', sans-serif",
+                    marginTop: '0.5rem'
+                  }}>
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '1rem',
+              flexWrap: 'wrap',
+              alignItems: 'center'
+            }}>
+              <a
+                href="#services"
                 style={{
-                  padding: window.innerWidth <= 768 ? '1rem' : '1.5rem',
-                  backgroundColor: '#1E293B',
-                  border: '1px solid #334155',
-                  borderRadius: '0.75rem',
-                  textAlign: 'center',
-                  opacity: statsAnimated ? (currentStatIndex === index ? 1 : 0.7) : 0,
-                  transform: statsAnimated ? (currentStatIndex === index ? 'scale(1.05)' : 'scale(1)') : 'scale(0.95)',
-                  transition: 'all 0.5s ease',
-                  transitionDelay: `${index * 200}ms`,
-                  minWidth: window.innerWidth <= 768 ? '120px' : '150px'
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  padding: '1rem 2rem',
+                  backgroundColor: '#00C9A7',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '0.5rem',
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '1rem',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  minHeight: '3rem'
                 }}
               >
-                <div style={{
-                  fontSize: window.innerWidth <= 768 ? '2rem' : '2.5rem',
-                  fontWeight: 'bold',
+                Voir mes services
+                <svg style={{width: '1.25rem', height: '1.25rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+              <Link
+                to="/create"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '0.5rem',
+                  padding: '1rem 2rem',
+                  backgroundColor: 'transparent',
                   color: '#00C9A7',
-                  fontFamily: "Syne, sans-serif"
-                }}>
-                  {stat.value}
-                </div>
-                <div style={{
-                  fontSize: '0.875rem',
-                  color: '#94A3B8',
-                  fontFamily: "DM Sans, sans-serif",
-                  marginTop: '0.5rem'
-                }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap',
-            flexDirection: window.innerWidth <= 768 ? 'column' : 'row',
-            alignItems: 'center'
-          }}>
-            <a 
-              href="#services" 
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.5rem',
-                padding: window.innerWidth <= 768 ? '1rem' : '1rem 2rem',
-                backgroundColor: '#00C9A7',
-                color: 'white',
-                border: 'none',
-                borderRadius: '0.5rem',
-                fontFamily: "DM Sans, sans-serif",
-                fontWeight: 500,
-                fontSize: '1rem',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                minHeight: '3rem',
-                width: window.innerWidth <= 768 ? '100%' : 'auto',
-                maxWidth: window.innerWidth <= 768 ? '300px' : 'none'
-              }}
-            >
-              Voir mes services
-              <svg style={{width: '1.25rem', height: '1.25rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </a>
-            <Link
-              to="/create"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.5rem',
-                padding: window.innerWidth <= 768 ? '1rem' : '1rem 2rem',
-                backgroundColor: 'transparent',
-                color: '#00C9A7',
-                border: '1px solid #00C9A7',
-                borderRadius: '0.5rem',
-                fontFamily: "DM Sans, sans-serif",
-                fontWeight: 500,
-                fontSize: '1rem',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                minHeight: '3rem',
-                width: window.innerWidth <= 768 ? '100%' : 'auto',
-                maxWidth: window.innerWidth <= 768 ? '300px' : 'none'
-              }}
-            >
-              Créer mon portfolio
-              <svg style={{width: '1.25rem', height: '1.25rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-              </svg>
-            </Link>
-          </div>
+                  border: '1px solid #00C9A7',
+                  borderRadius: '0.5rem',
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 500,
+                  fontSize: '1rem',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease',
+                  minHeight: '3rem'
+                }}
+              >
+                Créer mon portfolio
+                <svg style={{width: '1.25rem', height: '1.25rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -252,14 +272,14 @@ const Home = () => {
         }}>
           <h2 style={{
             fontSize: '2.5rem',
-            fontFamily: "Syne, sans-serif",
+            fontFamily: "'Syne', sans-serif",
             textAlign: 'center',
             marginBottom: '3rem',
             color: '#1A1A2E'
           }}>
             À qui je m'adresse
           </h2>
-          
+
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -271,7 +291,7 @@ const Home = () => {
                 fontWeight: 600,
                 color: '#00C9A7',
                 marginBottom: '1.5rem',
-                fontFamily: "Syne, sans-serif"
+                fontFamily: "'Syne', sans-serif"
               }}>
                 Je travaille avec :
               </h3>
@@ -283,15 +303,10 @@ const Home = () => {
                   'Startups tech à impact social'
                 ].map((item, index) => (
                   <div key={index} style={{display: 'flex', alignItems: 'center', gap: '0.75rem'}}>
-                    <svg style={{width: '1.25rem', height: '1.25rem', color: '#00C9A7'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg style={{width: '1.25rem', height: '1.25rem', color: '#00C9A7', flexShrink: 0}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span style={{
-                      color: '#94A3B8',
-                      fontFamily: "DM Sans, sans-serif"
-                    }}>
-                      {item}
-                    </span>
+                    <span style={{ color: '#94A3B8', fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -303,7 +318,7 @@ const Home = () => {
                 fontWeight: 600,
                 color: '#1A4D8F',
                 marginBottom: '1.5rem',
-                fontFamily: "Syne, sans-serif"
+                fontFamily: "'Syne', sans-serif"
               }}>
                 Problèmes que je résous :
               </h3>
@@ -315,15 +330,10 @@ const Home = () => {
                   'Systèmes existants non adaptés au contexte africain'
                 ].map((item, index) => (
                   <div key={index} style={{display: 'flex', alignItems: 'center', gap: '0.75rem'}}>
-                    <svg style={{width: '1.25rem', height: '1.25rem', color: '#1A4D8F'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg style={{width: '1.25rem', height: '1.25rem', color: '#1A4D8F', flexShrink: 0}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <span style={{
-                      color: '#94A3B8',
-                      fontFamily: "DM Sans, sans-serif"
-                    }}>
-                      {item}
-                    </span>
+                    <span style={{ color: '#94A3B8', fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -351,44 +361,42 @@ const Home = () => {
             <div>
               <h2 style={{
                 fontSize: '2.5rem',
-                fontFamily: "Syne, sans-serif",
+                fontFamily: "'Syne', sans-serif",
                 marginBottom: '2rem',
                 color: '#FFFFFF',
                 textAlign: 'left'
               }}>
                 À propos
               </h2>
-              <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', lineHeight: 1.8, color: '#94A3B8'}}>
-                <p style={{color: '#94A3B8', fontFamily: "DM Sans, sans-serif"}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '1rem', lineHeight: 1.8}}>
+                <p style={{color: '#94A3B8', fontFamily: "'DM Sans', sans-serif"}}>
                   Je m'appelle Emmanuel Nduwayo Bagi. Originaire de la RDC, j'ai vu de près ce que ça coûte — en temps, en argent, en impact — quand une organisation n'a pas les bons outils pour gérer ses données et sa logistique.
                 </p>
-                <p style={{color: '#94A3B8', fontFamily: "DM Sans, sans-serif"}}>
+                <p style={{color: '#94A3B8', fontFamily: "'DM Sans', sans-serif"}}>
                   C'est pour ça que je me suis spécialisé dans la conception et le déploiement de systèmes CRM et ERP adaptés aux réalités africaines. Pas des solutions copiées-collées de l'Occident, mais des systèmes pensés pour fonctionner avec des ressources limitées, des équipes sur le terrain, et des contextes complexes.
                 </p>
-                <p style={{color: '#94A3B8', fontFamily: "DM Sans, sans-serif"}}>
+                <p style={{color: '#94A3B8', fontFamily: "'DM Sans', sans-serif"}}>
                   Mon approche : comprendre vos processus métier, analyser vos contraintes, et concevoir des solutions qui apportent une valeur réelle — pas de la technologie pour la technologie.
                 </p>
               </div>
-              
+
               <div style={{marginTop: '2rem'}}>
-                <a 
+                <a
                   href="#contact"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
                     gap: '0.5rem',
                     padding: '0.75rem 1.5rem',
                     backgroundColor: 'transparent',
                     color: '#00C9A7',
                     border: '1px solid #00C9A7',
                     borderRadius: '0.5rem',
-                    fontFamily: "DM Sans, sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 500,
                     fontSize: '0.875rem',
                     textDecoration: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
+                    cursor: 'pointer'
                   }}
                 >
                   <svg style={{width: '1rem', height: '1rem'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -414,7 +422,7 @@ const Home = () => {
                     fontSize: '4rem',
                     fontWeight: 'bold',
                     color: 'white',
-                    fontFamily: "DM Sans, sans-serif"
+                    fontFamily: "'Oswald', sans-serif"
                   }}>EB</span>
                 </div>
                 <div style={{
@@ -447,44 +455,24 @@ const Home = () => {
         }}>
           <h2 style={{
             fontSize: '2.5rem',
-            fontFamily: "Syne, sans-serif",
+            fontFamily: "'Syne', sans-serif",
             textAlign: 'center',
             marginBottom: '3rem',
             color: '#FFFFFF'
           }}>
             Services
           </h2>
-          
+
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
             gap: '2rem'
           }}>
             {[
-              {
-                title: 'Conception Architecture SI',
-                description: 'Audit, conception et architecture de systèmes d\'information adaptés à vos besoins',
-                icon: '🏗️',
-                color: '#00C9A7'
-              },
-              {
-                title: 'Déploiement ERP/CRM',
-                description: 'Installation, configuration et mise en production de solutions ERP/CRM',
-                icon: '⚙️',
-                color: '#1A4D8F'
-              },
-              {
-                title: 'Formation & Accompagnement',
-                description: 'Formation des équipes et accompagnement au changement pour une adoption réussie',
-                icon: '🎓',
-                color: '#F59E0B'
-              },
-              {
-                title: 'Maintenance & Support',
-                description: 'Support technique continu et maintenance évolutive de vos systèmes',
-                icon: '🛠️',
-                color: '#EF4444'
-              }
+              { title: 'Conception Architecture SI', description: "Audit, conception et architecture de systèmes d'information adaptés à vos besoins", icon: '🏗️', color: '#00C9A7' },
+              { title: 'Déploiement ERP/CRM', description: 'Installation, configuration et mise en production de solutions ERP/CRM', icon: '⚙️', color: '#1A4D8F' },
+              { title: 'Formation & Accompagnement', description: "Formation des équipes et accompagnement au changement pour une adoption réussie", icon: '🎓', color: '#F59E0B' },
+              { title: 'Maintenance & Support', description: 'Support technique continu et maintenance évolutive de vos systèmes', icon: '🛠️', color: '#EF4444' }
             ].map((service, index) => (
               <div key={index} style={{
                 backgroundColor: '#1E293B',
@@ -493,12 +481,7 @@ const Home = () => {
                 padding: '2rem',
                 transition: 'all 0.3s ease'
               }}>
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  marginBottom: '1rem'
-                }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
                   <div style={{
                     fontSize: '2.5rem',
                     width: '3rem',
@@ -511,38 +494,23 @@ const Home = () => {
                   }}>
                     {service.icon}
                   </div>
-                  <h3 style={{
-                    color: '#FFFFFF',
-                    fontSize: '1.25rem',
-                    fontFamily: "Syne, sans-serif"
-                  }}>
+                  <h3 style={{ color: '#FFFFFF', fontSize: '1.25rem', fontFamily: "'Syne', sans-serif" }}>
                     {service.title}
                   </h3>
                 </div>
-                
-                <p style={{
-                  color: '#94A3B8',
-                  fontSize: '0.875rem',
-                  lineHeight: 1.6,
-                  marginBottom: '1.5rem'
-                }}>
+                <p style={{ color: '#94A3B8', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                   {service.description}
                 </p>
-                
-                <a 
-                  href="#contact"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    color: service.color,
-                    textDecoration: 'none',
-                    fontWeight: 500,
-                    fontSize: '0.875rem',
-                    fontFamily: "DM Sans, sans-serif",
-                    transition: 'all 0.2s ease'
-                  }}
-                >
+                <a href="#contact" style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: service.color,
+                  textDecoration: 'none',
+                  fontWeight: 500,
+                  fontSize: '0.875rem',
+                  fontFamily: "'DM Sans', sans-serif"
+                }}>
                   En savoir plus →
                 </a>
               </div>
@@ -552,182 +520,51 @@ const Home = () => {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" style={{
-        padding: '4rem 0',
-        backgroundColor: '#F5F7FA'
-      }}>
-        <div style={{
-          maxWidth: '800px',
-          margin: '0 auto',
-          padding: '0 2rem',
-          textAlign: 'center'
-        }}>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontFamily: "Syne, sans-serif",
-            marginBottom: '2rem',
-            color: '#1A1A2E'
-          }}>
+      <section id="contact" style={{ padding: '4rem 0', backgroundColor: '#F5F7FA' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2.5rem', fontFamily: "'Syne', sans-serif", marginBottom: '2rem', color: '#1A1A2E' }}>
             Contact
           </h2>
-          
-          <p style={{
-            fontSize: '1.25rem',
-            color: '#94A3B8',
-            marginBottom: '3rem',
-            fontFamily: "DM Sans, sans-serif"
-          }}>
+          <p style={{ fontSize: '1.25rem', color: '#94A3B8', marginBottom: '3rem', fontFamily: "'DM Sans', sans-serif" }}>
             Parlons de votre projet
           </p>
-          
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: window.innerWidth <= 768 ? '1fr' : 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '2rem'
-          }}>
-            <div style={{
-              backgroundColor: '#F8F9FA',
-              border: '1px solid #E2E8F0',
-              borderRadius: '0.75rem',
-              padding: '2rem',
-              textAlign: 'center'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem'}}>📧</div>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontFamily: "Syne, sans-serif",
-                marginBottom: '1rem',
-                color: '#1A1A2E'
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            {[
+              {
+                icon: '📧', title: 'Email',
+                content: <a href="mailto:emmanuel.bagi.n@gmail.com" style={{ color: '#1A4D8F', fontFamily: "'DM Sans', sans-serif", textDecoration: 'none', fontSize: '1rem' }}>emmanuel.bagi.n@gmail.com</a>
+              },
+              {
+                icon: '📱', title: 'WhatsApp',
+                content: (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                    <a href="https://wa.me/243995504241" target="_blank" style={{ color: '#1A4D8F', fontFamily: "'DM Sans', sans-serif", textDecoration: 'none', fontSize: '1rem' }}>+243 995 504 241</a>
+                    <a href="https://wa.me/243839185581" target="_blank" style={{ color: '#1A4D8F', fontFamily: "'DM Sans', sans-serif", textDecoration: 'none', fontSize: '1rem' }}>+243 839 185 581</a>
+                  </div>
+                )
+              },
+              {
+                icon: '📍', title: 'Localisation',
+                content: <p style={{ color: '#64748B', fontFamily: "'DM Sans', sans-serif", fontSize: '1rem', margin: 0 }}>Kinshasa, RDC</p>
+              },
+              {
+                icon: '💼', title: 'LinkedIn',
+                content: <a href="https://www.linkedin.com/in/emmanuel-bagi-n" target="_blank" rel="noopener noreferrer" style={{ color: '#1A4D8F', fontFamily: "'DM Sans', sans-serif", textDecoration: 'none', fontSize: '1rem' }}>linkedin.com/in/emmanuel-bagi-n</a>
+              }
+            ].map((card, i) => (
+              <div key={i} style={{
+                backgroundColor: '#F8F9FA',
+                border: '1px solid #E2E8F0',
+                borderRadius: '0.75rem',
+                padding: '2rem',
+                textAlign: 'center'
               }}>
-                Email
-              </h3>
-              <a href="mailto:emmanuel.bagi.n@gmail.com" style={{
-                color: '#1A4D8F',
-                fontFamily: "DM Sans, sans-serif",
-                textDecoration: 'none',
-                fontSize: '1rem',
-                transition: 'color 0.2s ease'
-              }} onMouseOver={(e) => {
-                e.currentTarget.style.color = '#00C9A7'
-              }} onMouseOut={(e) => {
-                e.currentTarget.style.color = '#1A4D8F'
-              }}>
-                emmanuel.bagi.n@gmail.com
-              </a>
-            </div>
-            
-            <div style={{
-              backgroundColor: '#F8F9FA',
-              border: '1px solid #E2E8F0',
-              borderRadius: '0.75rem',
-              padding: '2rem',
-              textAlign: 'center'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem'}}>📱</div>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontFamily: "Syne, sans-serif",
-                marginBottom: '1rem',
-                color: '#1A1A2E'
-              }}>
-                WhatsApp
-              </h3>
-              <div style={{
-                color: '#1A4D8F',
-                fontFamily: "DM Sans, sans-serif",
-                fontSize: '1rem',
-                marginBottom: '0.5rem'
-              }}>
-                <a href="https://wa.me/243995504241" target="_blank" style={{
-                  color: '#1A4D8F',
-                  fontFamily: "DM Sans, sans-serif",
-                  textDecoration: 'none',
-                  fontSize: '1rem',
-                  transition: 'color 0.2s ease'
-                }} onMouseOver={(e) => {
-                  e.currentTarget.style.color = '#00C9A7'
-                }} onMouseOut={(e) => {
-                  e.currentTarget.style.color = '#1A4D8F'
-                }}>
-                  +243 995 504 241
-                </a>
+                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{card.icon}</div>
+                <h3 style={{ fontSize: '1.25rem', fontFamily: "'Syne', sans-serif", marginBottom: '1rem', color: '#1A1A2E' }}>{card.title}</h3>
+                {card.content}
               </div>
-              <div style={{
-                color: '#1A4D8F',
-                fontFamily: "DM Sans, sans-serif",
-                fontSize: '1rem'
-              }}>
-                <a href="https://wa.me/243839185581" target="_blank" style={{
-                  color: '#1A4D8F',
-                  fontFamily: "DM Sans, sans-serif",
-                  textDecoration: 'none',
-                  fontSize: '1rem',
-                  transition: 'color 0.2s ease'
-                }} onMouseOver={(e) => {
-                  e.currentTarget.style.color = '#00C9A7'
-                }} onMouseOut={(e) => {
-                  e.currentTarget.style.color = '#1A4D8F'
-                }}>
-                  +243 839 185 581
-                </a>
-              </div>
-            </div>
-            
-            <div style={{
-              backgroundColor: '#F8F9FA',
-              border: '1px solid #E2E8F0',
-              borderRadius: '0.75rem',
-              padding: '2rem',
-              textAlign: 'center'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem'}}>📍</div>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontFamily: "Syne, sans-serif",
-                marginBottom: '1rem',
-                color: '#1A1A2E'
-              }}>
-                Localisation
-              </h3>
-              <p style={{
-                color: '#64748B',
-                fontFamily: "DM Sans, sans-serif",
-                fontSize: '1rem'
-              }}>
-                Kinshasa, RDC
-              </p>
-            </div>
-            
-            <div style={{
-              backgroundColor: '#F8F9FA',
-              border: '1px solid #E2E8F0',
-              borderRadius: '0.75rem',
-              padding: '2rem',
-              textAlign: 'center'
-            }}>
-              <div style={{fontSize: '3rem', marginBottom: '1rem'}}>💼</div>
-              <h3 style={{
-                fontSize: '1.25rem',
-                fontFamily: "Syne, sans-serif",
-                marginBottom: '1rem',
-                color: '#1A1A2E'
-              }}>
-                LinkedIn
-              </h3>
-              <a href="https://www.linkedin.com/in/emmanuel-bagi-n" target="_blank" rel="noopener noreferrer" style={{
-                color: '#1A4D8F',
-                fontFamily: "DM Sans, sans-serif",
-                textDecoration: 'none',
-                fontSize: '1rem',
-                transition: 'color 0.2s ease'
-              }} onMouseOver={(e) => {
-                e.currentTarget.style.color = '#00C9A7'
-              }} onMouseOut={(e) => {
-                e.currentTarget.style.color = '#1A4D8F'
-              }}>
-                linkedin.com/in/emmanuel-bagi-n
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
